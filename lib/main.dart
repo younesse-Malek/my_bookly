@@ -18,6 +18,7 @@ class BooklyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: kPraimaryColor,
+       
       ),
       home: Splashview(),
     );
