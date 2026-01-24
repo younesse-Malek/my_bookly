@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_bookly/Core/Utils/Styles.dart';
+import 'package:my_bookly/Core/Utils/styles.dart';
 import 'package:my_bookly/Core/Utils/assets.dart';
 import 'package:my_bookly/features/Home/presentation/view/widget/app_bar_home.dart';
 import 'package:my_bookly/features/Home/presentation/view/widget/featured_list_view.dart';
@@ -12,13 +12,16 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
 
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustoumAppBar(),
           FeaturedListView(),
           SizedBox(height: 45),
-          Text('Best Seller', style: Stayles.titleMediem),
+          Text(
+            'Best Seller',
+            style: Stayles.textstyle18,
+          ),
           SizedBox(height: 25),
           BestSellerListViewItem(),
         ],
@@ -37,10 +40,9 @@ class BestSellerListViewItem extends StatelessWidget {
         SizedBox(
           height: 130,
           child: AspectRatio(
-            aspectRatio: 2.7 / 4,
+            aspectRatio: 2.6 / 4,
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.red,
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
                   fit: BoxFit.fill,

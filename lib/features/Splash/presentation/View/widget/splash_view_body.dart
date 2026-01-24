@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:get/utils.dart';
 import 'package:my_bookly/Core/Utils/assets.dart';
 import 'package:my_bookly/features/Home/presentation/view/home_view.dart';
 import 'package:my_bookly/features/Splash/presentation/View/widget/sliding_texxt.dart';
@@ -62,7 +61,7 @@ class _SplashviewbodyState extends State<Splashviewbody>
       Get.to(
         () => HomePage(),
         transition: Transition.fade,
-        duration: KTransitionDurition,
+        duration: kTransitionDurition,
       );
     });
   }
