@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_bookly/features/Home/presentation/view/book_details_view.dart';
 import 'package:my_bookly/features/Home/presentation/view/home_view.dart';
@@ -10,11 +9,11 @@ abstract class AppRoutes {
 
   static final router = GoRouter(
     routes: [
-      GoRoute(path: '/', builder: (Context, state) => const Splashview()),
+      GoRoute(path: '/', builder: (context, state) => const Splashview()),
       GoRoute(path: kBookDetails,
-      builder: (Context,state)=> const BookDetailsView()),
+      builder: (context,state)=> const BookDetailsView()),
        GoRoute(path: kHomeView,
-      builder: (Context,state)=> const HomePage()
+      builder: (context,state)=> const HomePage()
       ),
     ],
   );
