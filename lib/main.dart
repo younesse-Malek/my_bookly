@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_bookly/Core/Utils/app_routes.dart';
 import 'package:my_bookly/features/constanse.dart';
 import 'package:my_bookly/features/Splash/presentation/View/splash_view.dart';
 
@@ -14,7 +14,8 @@ class BooklyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRoutes.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
@@ -26,7 +27,7 @@ class BooklyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Splashview(),
+     
     );
   }
 }
