@@ -10,7 +10,6 @@ abstract class Stayles {
     fontSize: 30,
     fontWeight: FontWeight.normal,
     fontFamily: kGTSectraFine,
-    
   );
   static const textstyle14 = TextStyle(
     fontSize: 14,
