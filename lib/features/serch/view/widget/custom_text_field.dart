@@ -6,17 +6,14 @@ class CostumTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: TextField(
-        decoration: InputDecoration(
-          enabledBorder: BuildOutlineInputBorder(),
-          focusedBorder: BuildOutlineInputBorder(),
-          hintText: 'serch',
-          suffixIcon: Opacity(
-            opacity: .8,
-            child: Icon(FontAwesomeIcons.magnifyingGlass, size: 21)),
-        ),
+    return TextField(
+      decoration: InputDecoration(
+        enabledBorder: BuildOutlineInputBorder(),
+        focusedBorder: BuildOutlineInputBorder(),
+        hintText: 'serch',
+        suffixIcon: Opacity(
+          opacity: .8,
+          child: Icon(FontAwesomeIcons.magnifyingGlass, size: 21)),
       ),
     );
   }
