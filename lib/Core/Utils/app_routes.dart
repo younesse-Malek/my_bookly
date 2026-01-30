@@ -2,7 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_bookly/features/Home/presentation/view/book_details_view.dart';
 import 'package:my_bookly/features/Home/presentation/view/home_view.dart';
 import 'package:my_bookly/features/Splash/presentation/View/splash_view.dart';
-import 'package:my_bookly/features/presentation/view/serch_view.dart';
+import 'package:my_bookly/features/serch/view/serch_view.dart';
 
 abstract class AppRoutes {
   static const  kBookDetails = '/BookDetails';

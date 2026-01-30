@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_bookly/features/presentation/view/serch_view_body.dart';
+import 'package:my_bookly/features/serch/view/serch_view_body.dart';
 
 class SerchView extends StatelessWidget {
   const SerchView({super.key});
@@ -7,7 +7,7 @@ class SerchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SerchViewBody(),
+      body: SafeArea(child: SerchViewBody()),
     );
   }
 }
