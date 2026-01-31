@@ -13,15 +13,16 @@ class CostumTextField extends StatelessWidget {
         hintText: 'serch',
         suffixIcon: Opacity(
           opacity: .8,
-          child: Icon(FontAwesomeIcons.magnifyingGlass, size: 21)),
+          child: Icon(FontAwesomeIcons.magnifyingGlass, size: 21),
+        ),
       ),
     );
   }
 
   OutlineInputBorder BuildOutlineInputBorder() {
     return OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
-          borderRadius: BorderRadius.circular(12),
-        );
+      borderSide: BorderSide(color: Colors.white),
+      borderRadius: BorderRadius.circular(12),
+    );
   }
 }

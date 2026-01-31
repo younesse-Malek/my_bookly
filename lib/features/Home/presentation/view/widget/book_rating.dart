@@ -22,7 +22,13 @@ class BookReating extends StatelessWidget {
         const SizedBox(width: 6.3),
         const Text('4.8', style: Stayles.textstyle16),
         const SizedBox(width: 5),
-        Opacity(opacity: .5, child: Text('(245)', style: Stayles.textstyle14.copyWith(fontWeight: FontWeight.w600))),
+        Opacity(
+          opacity: .5,
+          child: Text(
+            '(245)',
+            style: Stayles.textstyle14.copyWith(fontWeight: FontWeight.w600),
+          ),
+        ),
       ],
     );
   }

@@ -36,7 +36,7 @@ class CustomText extends StatelessWidget {
           style: Stayles.textstyle16.copyWith(
             color: colorText,
             fontSize: sizeText,
-            fontWeight: FontWeight.w900
+            fontWeight: FontWeight.w900,
           ),
         ),
       ),

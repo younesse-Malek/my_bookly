@@ -6,8 +6,6 @@ class SerchView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(child: SerchViewBody()),
-    );
+    return const Scaffold(body: SafeArea(child: SerchViewBody()));
   }
 }
