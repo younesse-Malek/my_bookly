@@ -48,17 +48,15 @@ class ServiseFailure extends Failure {
         response?['error']?['message'] ?? 'Unauthorized request',
       );
     } else if (statusCode == 404) {
-      return ServiseFailure(
-        'Requested resource not found',
-      );
+      return ServiseFailure('Requested resource not found');
     } else if (statusCode == 500) {
+      return ServiseFailure('Internal server error, please try later');
+    } else if (statusCode == 429) {
       return ServiseFailure(
-        'Internal server error, please try later',
+        'Too many requests. Please wait and try again later',
       );
     } else {
-      return ServiseFailure(
-        'Oops! Something went wrong, please try again',
-      );
+      return ServiseFailure('Oops! Something went wrong, please try again');
     }
   }
 }

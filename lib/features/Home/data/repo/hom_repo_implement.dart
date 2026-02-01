@@ -10,7 +10,7 @@ class HomRepoImpl implements HomeRepo {
 
   HomRepoImpl(this.serviceapi);
   @override
-  fetchNewestBooks() async {
+  Future<Either<Failure, List<BookMoudel>>> fetchNewestBooks() async {
     try {
       var data = await serviceapi.get(
         endPoint:
@@ -21,26 +21,40 @@ class HomRepoImpl implements HomeRepo {
         bookList.add(BookMoudel.fromJson(item));
       }
       return right(bookList);
-    }  catch (e) {
-     if(e is DioException)
-     {
-      return left(ServiseFailure.fromDioException(e)
+    }  on DioException catch (e) {
+      return left(
+        ServiseFailure.fromDioException(e),
       );
-     }
-      else
-      {
-        return left(ServiseFailure(e.toString()
-        ));
-      }
-      
-     }
+    } catch (e) {
+      return left(
+        ServiseFailure('Unexpected error occurred'),
+      );
+    }
     }
     
    
 
   @override
-  Future<Either<Failure, List<BookMoudel>>> fetchFeatureBooks() {
-    // TODO: implement fetchFeatureBooks
-    throw UnimplementedError();
-  }
+  Future<Either<Failure, List<BookMoudel>>> fetchFeatureBooks()async {
+    try {
+      var data = await serviceapi.get(
+        endPoint:
+            'volumes?q=subject:programming&Filtering=free-ebooks',
+      );
+      List<BookMoudel> bookList = [];
+      for (var item in data['items']) {
+        bookList.add(BookMoudel.fromJson(item));
+      }
+      return right(bookList);
+    }  on DioException catch (e) {
+      return left(
+        ServiseFailure.fromDioException(e),
+      );
+    } catch (e) {
+      return left(
+        ServiseFailure('Unexpected error occurred'),
+      );
+    }
+    }
+
 }
