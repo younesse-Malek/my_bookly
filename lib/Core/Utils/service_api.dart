@@ -12,3 +12,8 @@ class ServiceApi {
     return response.data;
   }
 }
+
+ServiceApi? servic;
+
+
+

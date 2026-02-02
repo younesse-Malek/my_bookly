@@ -12,6 +12,7 @@ class HomRepoImpl implements HomeRepo {
   @override
   Future<Either<Failure, List<BookMoudel>>> fetchNewestBooks() async {
     try {
+      
       var data = await serviceapi.get(
         endPoint:
             'volumes?q=subject:programming&Sorting=newest&Filtering=free-ebooks',
@@ -53,6 +54,7 @@ class HomRepoImpl implements HomeRepo {
     } catch (e) {
       return left(
         ServiseFailure('Unexpected error occurred'),
+      
       );
     }
     }
