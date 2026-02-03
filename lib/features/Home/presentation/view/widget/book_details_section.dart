@@ -15,7 +15,7 @@ class BooksDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          child: const CustoumBookimage(),
+          child: const CustoumBookimage(imageUrl: 'https://www.reddit.com/r/AskPhotography/comments/1eftu0r/what_was_the_best_photo_youve_ever_taken/',),
         ),
         const SizedBox(height: 43),
         Text(

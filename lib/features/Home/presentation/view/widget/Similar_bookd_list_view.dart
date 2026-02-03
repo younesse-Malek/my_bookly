@@ -14,7 +14,7 @@ class SimilarbooksListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: CustoumBookimage(),
+            child: CustoumBookimage(imageUrl: 'https://www.reddit.com/r/AskPhotography/comments/1eftu0r/what_was_the_best_photo_youve_ever_taken/',),
           );
         },
       ),
