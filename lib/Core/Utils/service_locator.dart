@@ -5,7 +5,8 @@ import 'package:my_bookly/features/Home/data/repo/hom_repo_implement.dart';
 
 final getIt = GetIt.instance;
 
-void SetupServiceLocator() {
+void setupServiceLocator
+() {
   getIt.registerSingleton<ServiceApi>(ServiceApi(Dio()));
   getIt.registerSingleton<HomRepoImpl>(HomRepoImpl(getIt.get<ServiceApi>()));
 }

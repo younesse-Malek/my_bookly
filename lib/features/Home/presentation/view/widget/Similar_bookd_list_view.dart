@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_bookly/features/Home/presentation/view/widget/custoum_book_item.dart';
 
-class SimilarbooksListView extends StatelessWidget {
-  const SimilarbooksListView({super.key});
+class SimilarBooksListView extends StatelessWidget {
+  const SimilarBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,10 @@ class SimilarbooksListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: CustoumBookimage(imageUrl: 'https://www.reddit.com/r/AskPhotography/comments/1eftu0r/what_was_the_best_photo_youve_ever_taken/',),
+            child: CustoumBookimage(
+              imageUrl:
+                  'https://www.reddit.com/r/AskPhotography/comments/1eftu0r/what_was_the_best_photo_youve_ever_taken/',
+            ),
           );
         },
       ),

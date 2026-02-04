@@ -5,10 +5,11 @@ import 'package:my_bookly/Core/Utils/styles.dart';
 class BookReating extends StatelessWidget {
   const BookReating({
     super.key,
-    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisAlignment = MainAxisAlignment.start, required this.avrgRataing, required this.countRataing,
   });
   final MainAxisAlignment mainAxisAlignment;
-
+final num avrgRataing;
+  final int countRataing;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,12 +21,12 @@ class BookReating extends StatelessWidget {
           color: Colors.amberAccent,
         ),
         const SizedBox(width: 6.3),
-        const Text('4.8', style: Stayles.textstyle16),
+         Text('$avrgRataing', style: Stayles.textstyle16),
         const SizedBox(width: 5),
         Opacity(
           opacity: .5,
           child: Text(
-            '(245)',
+        '$countRataing',
             style: Stayles.textstyle14.copyWith(fontWeight: FontWeight.w600),
           ),
         ),

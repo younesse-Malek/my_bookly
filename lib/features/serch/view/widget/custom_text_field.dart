@@ -8,8 +8,8 @@ class CostumTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        enabledBorder: BuildOutlineInputBorder(),
-        focusedBorder: BuildOutlineInputBorder(),
+        enabledBorder: buildOutlineInputBorder(),
+        focusedBorder: buildOutlineInputBorder(),
         hintText: 'serch',
         suffixIcon: Opacity(
           opacity: .8,
@@ -19,7 +19,7 @@ class CostumTextField extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder BuildOutlineInputBorder() {
+  OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
       borderSide: BorderSide(color: Colors.white),
       borderRadius: BorderRadius.circular(12),

@@ -15,7 +15,7 @@ class SimilarBooksDatails extends StatelessWidget {
           style: Stayles.textstyle16.copyWith(fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 16),
-        const SimilarbooksListView(),
+        const SimilarBooksListView(),
       ],
     );
   }
