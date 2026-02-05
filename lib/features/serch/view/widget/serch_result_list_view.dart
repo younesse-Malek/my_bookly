@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_bookly/features/Home/presentation/view/widget/bookr_list_view_item.dart';
 
 class SerchResult extends StatelessWidget {
   const SerchResult({super.key});
