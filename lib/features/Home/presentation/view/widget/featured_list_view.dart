@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:my_bookly/Core/Utils/app_routes.dart';
 import 'package:my_bookly/Core/widget/custom_error_widget.dart';
 import 'package:my_bookly/Core/widget/custom_lodaing_indicator.dart';
 import 'package:my_bookly/features/Home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
+import 'package:my_bookly/features/Home/presentation/view/widget/book_details_body.dart';
 import 'package:my_bookly/features/Home/presentation/view/widget/custoum_book_item.dart';
 
 class FeaturedListView extends StatelessWidget {
@@ -21,10 +24,21 @@ class FeaturedListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 8),
-                  child: CustoumBookimage(imageUrl:state.listBooks[index].volumeInfo.imageLinks
-        ?.thumbnail??''
-     ,),
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRoutes.kBookDetails,extra: state.listBooks[index]);
+                    },
+                    child: CustoumBookimage(
+                      imageUrl:
+                          state
+                              .listBooks[index]
+                              .volumeInfo
+                              .imageLinks
+                              ?.thumbnail ??
+                          '',
+                    ),
+                  ),
                 );
               },
             ),
@@ -32,7 +46,7 @@ class FeaturedListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return CustomErrMesaage(errMessage: state.errMessage);
         } else {
-          return  CustomLodaingIndicator();
+          return CustomLodaingIndicator();
         }
       },
     );

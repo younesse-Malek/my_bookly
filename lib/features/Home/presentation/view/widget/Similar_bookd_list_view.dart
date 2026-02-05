@@ -17,12 +17,15 @@ class SimilarBooksListView extends StatelessWidget {
         builder: (context, state) {
           if (state is FetchSimilarSucces) {
             return ListView.builder(
+              shrinkWrap: true,
               scrollDirection: Axis.horizontal,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: CustoumBookimage(
                     imageUrl:
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
                         'https://media.gettyimages.com/id/1300072335/fr/photo/solider-femelle-darm%C3%A9e-saluant-contre-le-ciel-de-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=XylDOzfedR4zBDIiuezZJRd7X4K7M5X_Q9AnwMhfgaQ=',
                   ),
                 );
