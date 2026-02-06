@@ -5,7 +5,6 @@ import 'package:my_bookly/Core/Utils/app_routes.dart';
 import 'package:my_bookly/Core/widget/custom_error_widget.dart';
 import 'package:my_bookly/Core/widget/custom_lodaing_indicator.dart';
 import 'package:my_bookly/features/Home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
-import 'package:my_bookly/features/Home/presentation/view/widget/book_details_body.dart';
 import 'package:my_bookly/features/Home/presentation/view/widget/custoum_book_item.dart';
 
 class FeaturedListView extends StatelessWidget {

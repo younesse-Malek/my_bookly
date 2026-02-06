@@ -21,7 +21,7 @@ class BookdetailsBody extends StatelessWidget {
                 const CoustomAppBarDetails(),
                  BooksDetailsSection(bookModel: bookMoudel,),
                 const SizedBox(height: 50),
-                const SimilarBooksDatails(),
+                 SimilarBooksDatails(bookMoudel: bookMoudel,),
 
                 const SizedBox(height: 20),
               ],
