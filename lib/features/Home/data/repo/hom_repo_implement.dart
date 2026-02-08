@@ -52,7 +52,7 @@ class HomRepoImpl implements HomeRepo {
 try {
       var data = await serviceapi.get(
         endPoint:
-            'volumes?q=subject:programming&Sorting=relevance&Filtering=free-ebooks&key=AIzaSyCcXDY_tOJV4doiTLlRQBdL9iqU239hdZg',
+            'volumes?q= $gategory&Sorting=relevance&Filtering=free-ebooks&key=AIzaSyCcXDY_tOJV4doiTLlRQBdL9iqU239hdZg',
       );
       List<BookMoudel> books = [];
        if (data['items'] != null) {

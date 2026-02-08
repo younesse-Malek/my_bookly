@@ -1,5 +1,3 @@
-
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_bookly/Core/Utils/service_locator.dart';
@@ -9,6 +7,8 @@ import 'package:my_bookly/features/Home/presentation/manger/featch_similar_cubit
 import 'package:my_bookly/features/Home/presentation/view/book_details_view.dart';
 import 'package:my_bookly/features/Home/presentation/view/home_view.dart';
 import 'package:my_bookly/features/Splash/presentation/View/splash_view.dart';
+import 'package:my_bookly/features/serch/data/repo/serch_reposimpl.dart';
+import 'package:my_bookly/features/serch/view/manager/serch_book_cubit/serch_book_cubit.dart';
 import 'package:my_bookly/features/serch/view/serch_view.dart';
 
 abstract class AppRoutes {
@@ -23,11 +23,17 @@ abstract class AppRoutes {
         path: kBookDetails,
         builder: (context, state) => BlocProvider(
           create: (context) => FetchSimilarCubit(getIt.get<HomRepoImpl>()),
-          child:  BookDetailsView(bookMoudel: state.extra as BookMoudel),
+          child: BookDetailsView(bookMoudel: state.extra as BookMoudel),
         ),
       ),
       GoRoute(path: kHomeView, builder: (context, state) => const HomePage()),
-      GoRoute(path: kSerchview, builder: (context, state) => const SerchView()),
+      GoRoute(
+        path: kSerchview,
+        builder: (context, state) => BlocProvider(
+          create: (context) => SerchBookCubit(getIt.get<SerchRepoImpl>()),
+          child: const SerchView(),
+        ),
+      ),
     ],
   );
 }

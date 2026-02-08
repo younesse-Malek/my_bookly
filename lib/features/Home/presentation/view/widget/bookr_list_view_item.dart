@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_bookly/Core/Utils/app_routes.dart';
+
 import 'package:my_bookly/Core/Utils/styles.dart';
 import 'package:my_bookly/features/Home/data/models/book_moudel/book_moudel.dart';
 import 'package:my_bookly/features/Home/presentation/view/widget/book_rating.dart';
@@ -14,8 +15,10 @@ class BooksListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        GoRouter.of(context).push(AppRoutes.kBookDetails,extra: bookModel);
+      onTap: () { 
+
+       GoRouter.of(context).push(AppRoutes.kBookDetails,extra: bookModel);
+
       },
       child: Row(
         children: [
@@ -43,7 +46,7 @@ class BooksListItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 3),
                 Text(
-                  bookModel.volumeInfo.authors![0],
+                  bookModel.volumeInfo.authors?[0]??'',
                   style: Stayles.textstyle14,
                 ),
                 const SizedBox(height: 3),
